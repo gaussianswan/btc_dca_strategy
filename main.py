@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
     usd_balance = get_usd_account_balance(client=auth_client)
 
-    if usd_balance > 10:
+    if usd_balance > 15:
         # We have our auth client, we are going to send in order to buy $5 of bitcoin
         btc_buy_order = auth_client.place_market_order(
             product_id='BTC-USD',
@@ -75,6 +75,12 @@ if __name__ == "__main__":
             product_id='ETH-USD',
             side = 'buy',
             funds=5
+        )
+
+        sol_buy_order = auth_client.place_market_order(
+            product_id='SOL-USD',
+            side='buy',
+            funds = 5
         )
 
     else:
